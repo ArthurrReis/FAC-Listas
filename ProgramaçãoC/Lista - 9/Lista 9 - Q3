@@ -1,0 +1,43 @@
+ 
+#include <stdio.h>
+
+/*Fazer uma função leituraDados que permaneça
+lendo valores reais até que o número 0 seja
+digitado. Ao final, a função deve determinar a
+quantidade de elementos fornecidos (excluindo
+o 0) e o maior dentre eles.*/
+
+void contador (int*cont, float *maior)
+{ 
+    float a;
+    *maior = -9999;
+    *cont=0;
+  
+      do {
+        printf("Entre com um valor: ");
+        scanf("%f", &a);
+        
+        if(a != 0) 
+        {  
+            (*cont)++;
+            
+            
+            if(a > *maior) {
+                *maior = a;
+            }
+        }
+    } while(a != 0);
+}
+    
+
+int main ()
+{
+    int contado;
+    float maismaior;
+    
+    contador(&contado, &maismaior);
+    printf("A quantidade de numeros lidos foi: %d", contado);
+    printf("\n O maior numero lido foi: %.2f", maismaior);
+    
+}
+ 
